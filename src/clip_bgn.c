@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "draw.h"
+#include "../inc/draw.h"
 
 void		clip_bgn_top(t_img *img, t_px *bgn, t_px *end)
 {

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "draw.h"
+#include "../inc/draw.h"
 
 t_img				*get_new_img(void *mlx, int width, int height)
 {

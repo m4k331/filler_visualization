@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "draw.h"
+#include "../inc/draw.h"
 
 static inline void	normalize_coords(t_px *bgn, t_px *end)
 {

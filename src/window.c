@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "draw.h"
+#include "../inc/draw.h"
 
 t_win			*get_new_win(void *mlx, int width, int height, char *name)
 {

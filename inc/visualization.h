@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw_line.c                                        :+:      :+:    :+:   */
+/*   visualization.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahugh <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: ahugh <ahugh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/06 17:33:40 by ahugh             #+#    #+#             */
-/*   Updated: 2019/03/31 14:49:36 by ahugh            ###   ########.fr       */
+/*   Created: 2019/08/01 15:17:23 by ahugh             #+#    #+#             */
+/*   Updated: 2019/08/01 18:02:32 by ahugh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/draw.h"
+#ifndef VISUALIZATION_H
+# define VISUALIZATION_H
+# include "draw.h"
+# include <stdbool.h>
 
-int					draw_line(t_img *img, t_px bgn, t_px end)
+typedef struct		s_game
 {
-	if (bgn.x == end.x || bgn.y == end.y)
-		draw_straight_line(img, &bgn, &end);
-	else
-		draw_slant_line(img, &bgn, &end);
-	return (1);
-}
+	char			*p1;
+	char			*p2;
+	int				**field;
+	int				move;
+}					t_game;
+
+#endif

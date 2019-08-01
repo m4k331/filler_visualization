@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "draw.h"
+#include "../inc/draw.h"
 
 int				get_color_h(t_px *bgn, t_px *end, int pos, float transparency)
 {
