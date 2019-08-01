@@ -1,35 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   visualization.h                                    :+:      :+:    :+:   */
+/*   init_game.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahugh <ahugh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/01 15:17:23 by ahugh             #+#    #+#             */
+/*   Created: 2019/08/01 18:06:41 by ahugh             #+#    #+#             */
 /*   Updated: 2019/08/01 19:55:16 by ahugh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VISUALIZATION_H
-# define VISUALIZATION_H
-# include "draw.h"
-# include <stdbool.h>
+#include "../inc/visualization.h"
 
-# define PLATEAU "Plateau"
-# define PLAYER "$$$"
-
-typedef struct		s_game
+int				init_game(void)
 {
-	int				**field;
-	char			*p1;
-	char			*p2;
-	int				h;
-	int				w;
-	int				move;
-}					t_game;
+	t_game		game;
 
-int					set_players(t_game *game);
-void				set_width_height(int *w, int *h, const char *title);
-int					init_game(void);
-
-#endif
+	if (set_players(&game) == true)
+		printf("p1: %s\np2: %s\n", game.p1, game.p2);
+	set_width_height(&game.w, &game.h, PLATEAU);
+	printf("w: %d\nh: %d\n", game.w, game.h);
+	return (true);
+}

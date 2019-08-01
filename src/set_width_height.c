@@ -1,39 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   set_width_height.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahugh <ahugh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/01 15:16:18 by ahugh             #+#    #+#             */
-/*   Updated: 2019/08/01 18:21:14 by ahugh            ###   ########.fr       */
+/*   Created: 2019/08/01 11:13:21 by ahugh             #+#    #+#             */
+/*   Updated: 2019/08/01 11:20:46 by ahugh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/visualization.h"
 
-//void			title(t_win *win, t_img *img, t_game *game)
-//{
-//	t_px		bgn;
-//	t_px		end;
-//
-//
-//}
-
-int				main(int ac, char **av)
+void			set_width_height(int *w, int *h, const char *title)
 {
-//	t_win		*win;
-//	void		*mlx;
-//	t_img		*img;
-//
-//
-//	mlx = mlx_init();
-//	win = get_new_win(mlx, W, H, "filler");
-//	img = get_new_img(mlx, W, H / 10);
-//	title(win, img);
-//	mlx_loop(mlx);
-	init_game();
-	ac++;
-	av++;
-	return (0);
+	char		*line;
+	char		**slices;
+
+	line = NULL;
+	get_next_line(STDIN_FILENO, &line);
+	if (line != NULL)
+	{
+		slices = ft_strsplit(line, ' ');
+		ft_free(line);
+		if (slices != NULL)
+		{
+			if (ft_strcmp(title, slices[0]) == 0)
+			{
+				*h = ft_atoi(slices[1]);
+				*w = ft_atoi(slices[2]);
+			}
+			del_any_matrix((void **)slices, 2);
+		}
+	}
 }

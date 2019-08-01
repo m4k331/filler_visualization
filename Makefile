@@ -6,7 +6,7 @@
 #    By: ahugh <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/23 18:51:35 by ahugh             #+#    #+#              #
-#    Updated: 2019/08/01 16:26:27 by ahugh            ###   ########.fr        #
+#    Updated: 2019/08/01 19:29:51 by ahugh            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,6 +54,9 @@ FILES			=	bottom.c \
 					clip_bgn.c \
 					draw_slant_line.c \
 					left_bottom.c \
+					init_game.c \
+					set_players.c \
+					set_width_height.c \
 					main.c
 
 # flags && compile
