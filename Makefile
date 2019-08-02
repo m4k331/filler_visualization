@@ -6,7 +6,7 @@
 #    By: ahugh <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/23 18:51:35 by ahugh             #+#    #+#              #
-#    Updated: 2019/08/02 13:41:50 by ahugh            ###   ########.fr        #
+#    Updated: 2019/08/02 17:43:29 by ahugh            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,6 +64,8 @@ FILES			=	bottom.c \
 					pass_line.c \
 					visualization.c \
 					upd_weight_players.c \
+					init_viz.c \
+					panel_viz.c \
 					main.c
 
 # flags && compile

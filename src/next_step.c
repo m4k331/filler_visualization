@@ -6,7 +6,7 @@
 /*   By: ahugh <ahugh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/02 11:57:04 by ahugh             #+#    #+#             */
-/*   Updated: 2019/08/02 16:29:56 by ahugh            ###   ########.fr       */
+/*   Updated: 2019/08/02 16:30:59 by ahugh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,6 @@ int					next_step(t_game *game, int ***maps)
 			return (false);
 	}
 	upd_weight_players(game, maps[game->step]);
-	visualization(game, maps[game->step]);
+	//visualization(game, maps[game->step]);
 	return (true);
 }
