@@ -55,8 +55,10 @@ FILES			=	bottom.c \
 					draw_slant_line.c \
 					left_bottom.c \
 					init_game.c \
+					del_game.c \
 					set_players.c \
 					set_width_height.c \
+					get_int_matrix.c \
 					main.c
 
 # flags && compile

@@ -3,3 +3,4 @@
 *.sw*
 cmake-build-debug/*
 filler.trace
+*.dSYM/*

@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_game.c                                        :+:      :+:    :+:   */
+/*   get_int_matrix.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahugh <ahugh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/01 18:06:41 by ahugh             #+#    #+#             */
-/*   Updated: 2019/08/02 11:32:30 by ahugh            ###   ########.fr       */
+/*   Created: 2019/08/01 11:11:56 by ahugh             #+#    #+#             */
+/*   Updated: 2019/08/01 11:11:56 by ahugh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/visualization.h"
 
-t_game				*init_game(void)
+int				**get_int_matrix(int w, int h)
 {
-	t_game			*game;
+	size_t		size;
+	int			**matrix;
+	int			*row;
+	int			iter;
 
-	game = (t_game *)ft_memalloc(sizeof(t_game));
-	if (game == NULL)
+	size = sizeof(int *) * (h + 1);
+	matrix = (int **)ft_memalloc(size);
+	if (matrix == NULL)
 		return (NULL);
-	if (set_players(game) == false)
+	iter = 0;
+	size = sizeof(int) * (w + 1);
+	while (iter < h)
 	{
-		del_game(&game);
-		return (NULL);
+		row = (int *)ft_memalloc(size);
+		if (row == NULL)
+		{
+			del_any_matrix((void **)matrix, 2);
+			return (NULL);
+		}
+		matrix[iter] = row;
+		iter++;
 	}
-	set_width_height(&game->w, &game->h, PLATEAU);
-	if (game->w < 1 || game->h < 1)
-	{
-		del_game(&game);
-		return (NULL);
-	}
-	game->field = get_int_matrix(game->w, game->h);
-	if (game->field == NULL)
-	{
-		del_game(&game);
-		return (NULL);
-	}
-	return (game);
+	return (matrix);
 }

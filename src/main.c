@@ -6,22 +6,15 @@
 /*   By: ahugh <ahugh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/01 15:16:18 by ahugh             #+#    #+#             */
-/*   Updated: 2019/08/01 18:21:14 by ahugh            ###   ########.fr       */
+/*   Updated: 2019/08/02 11:51:28 by ahugh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/visualization.h"
 
-//void			title(t_win *win, t_img *img, t_game *game)
-//{
-//	t_px		bgn;
-//	t_px		end;
-//
-//
-//}
-
 int				main(int ac, char **av)
 {
+	t_game		*game;
 //	t_win		*win;
 //	void		*mlx;
 //	t_img		*img;
@@ -32,7 +25,9 @@ int				main(int ac, char **av)
 //	img = get_new_img(mlx, W, H / 10);
 //	title(win, img);
 //	mlx_loop(mlx);
-	init_game();
+	game = init_game();
+	//printf("game: %p\nfield: %p\nw: %d\nh: %d\np1: %s\np2: %s\nstep: %d\ncolor: %d\n", game, game->field, game->w, game->h, game->p1, game->p2, game->step, game->color);
+	del_game(&game);
 	ac++;
 	av++;
 	return (0);
