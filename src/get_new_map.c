@@ -6,7 +6,7 @@
 /*   By: ahugh <ahugh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/02 12:28:14 by ahugh             #+#    #+#             */
-/*   Updated: 2019/08/02 13:42:11 by ahugh            ###   ########.fr       */
+/*   Updated: 2019/08/02 15:51:49 by ahugh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,9 @@ static int			fill_map(int **map, int w, int h)
 	int				row;
 
 	row = 0;
+	line = NULL;
 	while (row < h)
 	{
-		line = NULL;
 		get_next_line(STDIN_FILENO, &line);
 		if (line == NULL)
 			return (false);
@@ -66,7 +66,7 @@ static int			fill_map(int **map, int w, int h)
 			return (false);
 		if (fill_row(map[row], str_row, w) == false)
 			return (false);
-		free(line);
+		ft_memdel((void **)&line);
 		row++;
 	}
 	return (true);

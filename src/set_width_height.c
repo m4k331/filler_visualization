@@ -22,7 +22,7 @@ void			set_width_height(int *w, int *h, const char *title)
 	if (line != NULL)
 	{
 		slices = ft_strsplit(line, ' ');
-		ft_free(line);
+		ft_memdel((void **)&line);
 		if (slices != NULL)
 		{
 			if (ft_strcmp(title, slices[0]) == 0)

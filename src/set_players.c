@@ -6,7 +6,7 @@
 /*   By: ahugh <ahugh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/01 19:27:09 by ahugh             #+#    #+#             */
-/*   Updated: 2019/08/02 13:52:16 by ahugh            ###   ########.fr       */
+/*   Updated: 2019/08/02 13:52:28 by ahugh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ static int		set(t_game *game)
 	int			i;
 
 	i = 0;
+	line = NULL;
 	while (i < 2)
 	{
-		line = NULL;
 		get_next_line(STDIN_FILENO, &line);
 		if (line == NULL)
 			return (false);
@@ -52,7 +52,7 @@ static int		set(t_game *game)
 		}
 		else if (ft_strncmp(PLATEAU, line, 7) == 0)
 			return (false);
-		free(line);
+		ft_memdel((void **)&line);
 	}
 	return (true);
 }
@@ -64,9 +64,9 @@ int				set_players(t_game *game)
 		if (game->p1 == NULL || game->p2 == NULL)
 		{
 			if (game->p1 == NULL)
-				free(game->p1);
+				ft_memdel((void **)&game->p1);
 			if (game->p2 == NULL)
-				free(game->p2);
+				ft_memdel((void **)&game->p2);
 			return (false);
 		}
 		return (true);
@@ -74,9 +74,9 @@ int				set_players(t_game *game)
 	else
 	{
 		if (game->p1 != NULL)
-			free(game->p1);
+			ft_memdel((void **)&game->p1);
 		if (game->p2 != NULL)
-			free(game->p2);
+			ft_memdel((void **)&game->p2);
 		return (false);
 	}
 }

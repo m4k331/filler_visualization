@@ -6,7 +6,7 @@
 /*   By: djon-con <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 19:27:51 by ahugh             #+#    #+#             */
-/*   Updated: 2019/03/31 14:19:29 by ahugh            ###   ########.fr       */
+/*   Updated: 2019/08/02 16:34:35 by ahugh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_win			*get_new_win(void *mlx, int width, int height, char *name)
 		return (0);
 	window->mlx = mlx;
 	if (!(window->win = mlx_new_window(mlx, width, height, name)))
-		free(window);
+		ft_memdel((void **)&window);
 	else
 	{
 		window->width = width;
@@ -37,9 +37,9 @@ void			del_win(t_win *window)
 		if (window->mlx && window->win)
 			mlx_destroy_window(window->mlx, window->win);
 		else if (window->mlx)
-			ft_memdel(&window->mlx);
+			ft_memdel((void **)&window->mlx);
 		else if (window->win)
-			ft_memdel(&window->win);
-		ft_memdel((void**)&window);
+			ft_memdel((void **)&window->win);
+		ft_memdel((void **)&window);
 	}
 }

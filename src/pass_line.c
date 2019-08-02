@@ -6,7 +6,7 @@
 /*   By: ahugh <ahugh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/31 12:02:51 by ahugh             #+#    #+#             */
-/*   Updated: 2019/07/31 21:52:25 by ahugh            ###   ########.fr       */
+/*   Updated: 2019/08/02 16:31:49 by ahugh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ void				pass_line(void)
 	line = NULL;
 	get_next_line(STDIN_FILENO, &line);
 	if (line != NULL)
-		ft_free(line);
+		ft_memdel((void **)&line);
 }
