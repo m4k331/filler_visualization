@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   del_game.c                                         :+:      :+:    :+:   */
+/*   upd_weight_players.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahugh <ahugh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/02 11:00:19 by ahugh             #+#    #+#             */
-/*   Updated: 2019/08/02 11:38:42 by ahugh            ###   ########.fr       */
+/*   Created: 2019/08/02 13:11:39 by ahugh             #+#    #+#             */
+/*   Updated: 2019/08/02 13:19:52 by ahugh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/visualization.h"
 
-void				del_game(t_game **game)
+void				upd_weight_players(t_game *game, int **map)
 {
-	if (*game != NULL)
+	int				w;
+	int				h;
+
+	game->wgt_p1 = 0;
+	game->wgt_p2 = 0;
+	h = 0;
+	while (h < game->h)
 	{
-		if ((*game)->p1 != NULL)
-			ft_free((*game)->p1);
-		if ((*game)->p2 != NULL)
-			ft_free((*game)->p2);
-		ft_free(*game);
-		*game = NULL;
+		w = 0;
+		while (w < game->w)
+		{
+			if (map[h][w] == 1 || map[h][w] == 2)
+				game->wgt_p1++;
+			else if (map[h][w] == -1 || map[h][w] == -2)
+				game->wgt_p2++;
+			w++;
+		}
+		h++;
 	}
 }

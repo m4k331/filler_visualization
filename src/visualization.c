@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   del_game.c                                         :+:      :+:    :+:   */
+/*   visualization.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahugh <ahugh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/02 11:00:19 by ahugh             #+#    #+#             */
-/*   Updated: 2019/08/02 11:38:42 by ahugh            ###   ########.fr       */
+/*   Created: 2019/08/02 13:39:23 by ahugh             #+#    #+#             */
+/*   Updated: 2019/08/02 13:39:23 by ahugh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/visualization.h"
 
-void				del_game(t_game **game)
+void				visualization(t_game *game, int **map)
 {
-	if (*game != NULL)
+	int				w;
+	int				h;
+
+	printf("\n%s(%d)\t%s(%d)\n", game->p1, game->wgt_p1, game->p2, game->wgt_p2);
+	h = 0;
+	while (h < game->h)
 	{
-		if ((*game)->p1 != NULL)
-			ft_free((*game)->p1);
-		if ((*game)->p2 != NULL)
-			ft_free((*game)->p2);
-		ft_free(*game);
-		*game = NULL;
+		w = 0;
+		while (w < game->w)
+		{
+			printf("%2d", map[h][w]);
+			w++;
+		}
+		printf("\n");
+		h++;
 	}
 }

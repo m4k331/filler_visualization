@@ -6,7 +6,7 @@
 /*   By: ahugh <ahugh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/01 18:06:41 by ahugh             #+#    #+#             */
-/*   Updated: 2019/08/02 11:32:30 by ahugh            ###   ########.fr       */
+/*   Updated: 2019/08/02 13:52:16 by ahugh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,6 @@ t_game				*init_game(void)
 	}
 	set_width_height(&game->w, &game->h, PLATEAU);
 	if (game->w < 1 || game->h < 1)
-	{
-		del_game(&game);
-		return (NULL);
-	}
-	game->field = get_int_matrix(game->w, game->h);
-	if (game->field == NULL)
 	{
 		del_game(&game);
 		return (NULL);

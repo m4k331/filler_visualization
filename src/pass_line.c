@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   del_game.c                                         :+:      :+:    :+:   */
+/*   pass_line.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahugh <ahugh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/02 11:00:19 by ahugh             #+#    #+#             */
-/*   Updated: 2019/08/02 11:38:42 by ahugh            ###   ########.fr       */
+/*   Created: 2019/07/31 12:02:51 by ahugh             #+#    #+#             */
+/*   Updated: 2019/07/31 21:52:25 by ahugh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/visualization.h"
 
-void				del_game(t_game **game)
+void				pass_line(void)
 {
-	if (*game != NULL)
-	{
-		if ((*game)->p1 != NULL)
-			ft_free((*game)->p1);
-		if ((*game)->p2 != NULL)
-			ft_free((*game)->p2);
-		ft_free(*game);
-		*game = NULL;
-	}
+	char			*line;
+
+	line = NULL;
+	get_next_line(STDIN_FILENO, &line);
+	if (line != NULL)
+		ft_free(line);
 }

@@ -6,7 +6,7 @@
 /*   By: ahugh <ahugh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/01 15:16:18 by ahugh             #+#    #+#             */
-/*   Updated: 2019/08/02 11:51:28 by ahugh            ###   ########.fr       */
+/*   Updated: 2019/08/02 16:08:30 by ahugh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int				main(int ac, char **av)
 {
 	t_game		*game;
+	int			***maps;
 //	t_win		*win;
 //	void		*mlx;
 //	t_img		*img;
@@ -26,7 +27,26 @@ int				main(int ac, char **av)
 //	title(win, img);
 //	mlx_loop(mlx);
 	game = init_game();
-	//printf("game: %p\nfield: %p\nw: %d\nh: %d\np1: %s\np2: %s\nstep: %d\ncolor: %d\n", game, game->field, game->w, game->h, game->p1, game->p2, game->step, game->color);
+	if (game == NULL)
+		return (1);
+
+	maps = (int ***)ft_memalloc(sizeof(int **) * 1024);
+
+	pass_line();
+	maps[0] = get_new_map(game);
+	if (maps[0] == NULL)
+		return (1);
+	upd_weight_players(game, maps[game->step]);
+	visualization(game, maps[0]);
+
+	while (1)
+	{
+		if (next_step(game, maps) == false)
+			break ;
+	}
+	printf("end\n");
+	del_any_matrix((void **)maps, 3);
+	printf("del maps DA!!!\n");
 	del_game(&game);
 	ac++;
 	av++;

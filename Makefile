@@ -6,7 +6,7 @@
 #    By: ahugh <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/23 18:51:35 by ahugh             #+#    #+#              #
-#    Updated: 2019/08/01 19:29:51 by ahugh            ###   ########.fr        #
+#    Updated: 2019/08/02 13:41:50 by ahugh            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,6 +59,11 @@ FILES			=	bottom.c \
 					set_players.c \
 					set_width_height.c \
 					get_int_matrix.c \
+					get_new_map.c \
+					next_step.c \
+					pass_line.c \
+					visualization.c \
+					upd_weight_players.c \
 					main.c
 
 # flags && compile
