@@ -6,13 +6,13 @@
 /*   By: ahugh <ahugh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/02 17:34:03 by ahugh             #+#    #+#             */
-/*   Updated: 2019/08/02 18:11:02 by ahugh            ###   ########.fr       */
+/*   Updated: 2019/08/03 21:55:48 by ahugh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/visualization.h"
 
-static void			setConnect(t_viz **viz)
+static void			set_connect(t_viz **viz)
 {
 	if (*viz != NULL)
 	{
@@ -25,7 +25,7 @@ static void			setConnect(t_viz **viz)
 	}
 }
 
-static void			setWindow(t_viz **viz)
+static void			set_window(t_viz **viz)
 {
 	if (*viz != NULL)
 	{
@@ -38,7 +38,7 @@ static void			setWindow(t_viz **viz)
 	}
 }
 
-static void			setImage(t_viz **viz)
+static void			set_image(t_viz **viz)
 {
 	if (*viz != NULL)
 	{
@@ -52,14 +52,14 @@ static void			setImage(t_viz **viz)
 	}
 }
 
-t_viz				*init_viz(t_game *game, int ***maps)
+t_viz				*init_viz(t_game *game, t_dlist *maps)
 {
 	t_viz			*viz;
 
 	viz = (t_viz *)ft_memalloc(sizeof(t_viz));
-	setConnect(&viz);
-	setWindow(&viz);
-	setImage(&viz);
+	set_connect(&viz);
+	set_window(&viz);
+	set_image(&viz);
 	if (viz == NULL)
 		return (NULL);
 	viz->game = game;

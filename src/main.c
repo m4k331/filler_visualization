@@ -6,7 +6,7 @@
 /*   By: ahugh <ahugh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/01 15:16:18 by ahugh             #+#    #+#             */
-/*   Updated: 2019/08/02 18:13:54 by ahugh            ###   ########.fr       */
+/*   Updated: 2019/08/03 20:28:36 by ahugh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int				main(int ac, char **av)
 {
 	t_viz		*viz;
 	t_game		*game;
-	int			***maps;
+	t_dlist		*maps;
 
 	game = init_game();
 	if (game == NULL)
@@ -24,7 +24,7 @@ int				main(int ac, char **av)
 		perror("failed to create game!\n");
 		return (1);
 	}
-	maps = (int ***)ft_memalloc(sizeof(int **) * 6024);
+	maps = ft_dlstnew(0, 0);
 	if (maps == NULL)
 	{
 		perror("failed to create maps!\n");
@@ -41,21 +41,20 @@ int				main(int ac, char **av)
 	}
 
 	pass_line();
-	maps[0] = get_new_map(game);
-	if (maps[0] == NULL)
+	maps->con = get_new_map(game);
+	if (maps->con == NULL)
 		return (1);
-	upd_weight_players(game, maps[game->step]);
+	upd_weight_players(game, (int **)maps->con);
 	visualization(viz);
 
 	while (1)
 	{
-		if (next_step(game, maps) == false)
+		if (next_step(game, &maps) == false)
 			break ;
 	}
 
 	del_any_matrix((void **)maps, 3);
 	del_game(&game);
-	mlx_loop(viz->mlx);
 	ac++;
 	av++;
 	return (0);

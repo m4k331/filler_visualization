@@ -6,7 +6,7 @@
 /*   By: ahugh <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 13:00:46 by ahugh             #+#    #+#             */
-/*   Updated: 2019/03/31 13:07:47 by ahugh            ###   ########.fr       */
+/*   Updated: 2019/08/03 22:24:27 by ahugh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,15 +53,35 @@
 # define PINK		0xFF1493
 # define SKY		0x87CEFA
 # define AQUA		0x7FFFD4
-# define VIM        0x24e0e0
+# define VIM		0x24e0e0
 
-# define KNRM       "\x1B[0m"
-# define KRED       "\x1B[31m"
-# define KGRN       "\x1B[32m"
-# define KYEL       "\x1B[33m"
-# define KBLU       "\x1B[34m"
-# define KMAG       "\x1B[35m"
-# define KCYN       "\x1B[36m"
-# define KWHT       "\x1B[37m"
+# define KNRM		"\x1B[0m"
+# define KRED		"\x1B[31m"
+# define KGRN		"\x1B[32m"
+# define KYEL		"\x1B[33m"
+# define KBLU		"\x1B[34m"
+# define KMAG		"\x1B[35m"
+# define KCYN		"\x1B[36m"
+# define KWHT		"\x1B[37m"
+
+# define A0			0x06799F
+# define B0			0xFF8300
+# define A1			0xC9007A
+# define B1			0xA5EF00
+# define A2			0x6C0AAB
+# define B2			0xFFFC00
+# define A3			0x3914AF
+# define B3			0xFFD300
+# define A4			0x6F0AAA
+# define B4			0xFFAA00
+# define A5			0xFD0006
+# define B5			0x009B95
+# define A6			0xFF2800
+# define B6			0x00BB3F
+
+# define TL_FL		0xE6FFFF
+# define STEP		0x9932CC
+# define KEYS		0x24e0e0
+# define INFO_MAP	0x4169E1
 
 #endif
