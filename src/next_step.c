@@ -6,7 +6,7 @@
 /*   By: ahugh <ahugh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/02 11:57:04 by ahugh             #+#    #+#             */
-/*   Updated: 2019/08/03 20:33:09 by ahugh            ###   ########.fr       */
+/*   Updated: 2019/08/03 22:50:32 by ahugh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,25 +38,25 @@ static int			skip_no_map_lines(void)
 	}
 }
 
-int					next_step(t_game *game, t_dlist **maps)
+int					next_step(t_viz *viz)
 {
 	int				**field;
 
-	game->step++;
-	if ((*maps)->next == NULL)
+	viz->game->step++;
+	if (viz->maps->next == NULL)
 	{
 		if (skip_no_map_lines() == false)
 			return (false);
-		field = get_new_map(game);
+		field = get_new_map(viz->game);
 		if (field == NULL)
 			return (false);
-		(*maps)->next = ft_dlstnew(field, game->step);
+		viz->maps->next = ft_dlstnew(field, viz->game->step);
 		del_any_matrix((void **)field, 2);
-		if ((*maps)->next == NULL)
+		if (viz->maps->next == NULL)
 			return (false);
 	}
-	*maps = (*maps)->next;
-	upd_weight_players(game, (int **)(*maps)->con);
-	//visualization(game, maps[game->step]);
+	viz->maps = viz->maps->next;
+	upd_weight_players(viz->game, (int **)viz->maps->con);
+	visualization(viz);
 	return (true);
 }

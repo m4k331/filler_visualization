@@ -6,7 +6,7 @@
 /*   By: ahugh <ahugh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/01 15:17:23 by ahugh             #+#    #+#             */
-/*   Updated: 2019/08/03 19:57:57 by ahugh            ###   ########.fr       */
+/*   Updated: 2019/08/03 23:09:19 by ahugh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@
 
 # define W_MAP 1300
 # define H_MAP 1000
+
+# define X 550
+# define Y 150
 
 typedef struct		s_game
 {
@@ -49,16 +52,19 @@ int					**get_int_matrix(int w, int h);
 int					**get_new_map(t_game *game);
 void				del_game(t_game **game);
 t_game				*init_game(void);
-int					next_step(t_game *game, t_dlist **maps);
 void				upd_weight_players(t_game *game, int **map);
 void				pass_line(void);
 void				visualization(t_viz *viz);
 
 t_viz				*init_viz(t_game *game, t_dlist *maps);
-int					panel_viz(t_viz *viz);
 char				*get_str_map_size(int w, int h);
 char				*get_str_player(int num, char *player);
 char				*get_str_player_wgt(char *player, int wgt);
 int					get_color_player(int num, int color);
+
+int					next_step(t_viz *viz);
+
+int					draw_panel(t_viz *viz);
+void				draw_map(t_viz *viz);
 
 #endif

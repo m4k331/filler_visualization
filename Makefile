@@ -6,7 +6,7 @@
 #    By: ahugh <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/23 18:51:35 by ahugh             #+#    #+#              #
-#    Updated: 2019/08/03 19:53:21 by ahugh            ###   ########.fr        #
+#    Updated: 2019/08/03 22:57:37 by ahugh            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,11 +65,12 @@ FILES			=	bottom.c \
 					visualization.c \
 					upd_weight_players.c \
 					init_viz.c \
-					panel_viz.c \
+					draw_panel.c \
 					str_map_size.c \
 					get_str_player.c \
 					get_str_player_wgt.c \
 					get_color_player.c \
+					draw_map.c \
 					main.c
 
 # flags && compile

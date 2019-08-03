@@ -6,7 +6,7 @@
 /*   By: ahugh <ahugh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/01 15:16:18 by ahugh             #+#    #+#             */
-/*   Updated: 2019/08/03 20:28:36 by ahugh            ###   ########.fr       */
+/*   Updated: 2019/08/03 20:33:28 by ahugh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int				main(int ac, char **av)
 
 	while (1)
 	{
-		if (next_step(game, &maps) == false)
+		if (next_step(viz) == false)
 			break ;
 	}
 
