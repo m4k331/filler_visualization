@@ -86,6 +86,7 @@ static int			print_players(t_viz *viz)
 
 int					draw_panel(t_viz *viz)
 {
+	mlx_clear_window(viz->mlx, viz->win->win);
 	mlx_string_put(viz->mlx, viz->win->win, 100, 100,
 			TL_FL, "### ### #   #   ### ##");
 	mlx_string_put(viz->mlx, viz->win->win, 100, 120,

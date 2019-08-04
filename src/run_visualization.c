@@ -6,15 +6,25 @@
 /*   By: ahugh <ahugh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/04 16:28:05 by ahugh             #+#    #+#             */
-/*   Updated: 2019/08/04 16:53:58 by ahugh            ###   ########.fr       */
+/*   Updated: 2019/08/04 17:45:34 by ahugh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/visualization.h"
 
+static int		press_key(int key, void **viz)
+{
+	if (key == 36)
+		play((t_viz *)(*viz));
+	else if (key == 49)
+		shift_color((t_viz *)(*viz));
+	return (1);
+}
+
 static void		key_hooks(t_viz **viz)
 {
-	(*viz)->game->step += 0;
+	mlx_hook((*viz)->win->win, 17, 0, red_button, viz);
+	mlx_hook((*viz)->win->win, 2, 0, press_key, viz);
 }
 
 static int		initialisation(t_viz **viz)
@@ -52,11 +62,7 @@ static int		set_initial_values(t_viz **viz)
 	(*viz)->maps->con = get_new_map((*viz)->game);
 	if ((*viz)->maps->con == NULL)
 	{
-		ft_memdel((void **)&(*viz)->maps);
-		del_game(&(*viz)->game);
-		del_img((*viz)->img);
-		del_win((*viz)->win);
-		ft_memdel((void **)viz);
+		del_viz(viz);
 		perror("failed to set initial values\n");
 		return (false);
 	}

@@ -6,7 +6,7 @@
 /*   By: ahugh <ahugh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/01 15:17:23 by ahugh             #+#    #+#             */
-/*   Updated: 2019/08/04 16:34:21 by ahugh            ###   ########.fr       */
+/*   Updated: 2019/08/04 17:43:37 by ahugh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ void				pass_line(void);
 void				visualization(t_viz *viz);
 
 t_viz				*init_viz(t_game *game, t_dlist *maps);
+void				del_viz(t_viz **viz);
 char				*get_str_map_size(int w, int h);
 char				*get_str_player(int num, char *player);
 char				*get_str_player_wgt(char *player, int wgt);
@@ -68,5 +69,9 @@ int					draw_panel(t_viz *viz);
 void				draw_map(t_viz *viz);
 
 int					run_visualization(void);
+void				shift_color(t_viz *viz);
+void				play(t_viz *viz);
+
+int					red_button(void **viz);
 
 #endif

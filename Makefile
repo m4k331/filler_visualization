@@ -6,7 +6,7 @@
 #    By: ahugh <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/23 18:51:35 by ahugh             #+#    #+#              #
-#    Updated: 2019/08/03 22:57:37 by ahugh            ###   ########.fr        #
+#    Updated: 2019/08/04 17:39:24 by ahugh            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,6 +72,10 @@ FILES			=	bottom.c \
 					get_color_player.c \
 					draw_map.c \
 					run_visualization.c \
+					red_button.c \
+					del_viz.c \
+					play.c \
+					shift_color.c \
 					main.c
 
 # flags && compile
