@@ -6,7 +6,7 @@
 /*   By: ahugh <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 13:00:46 by ahugh             #+#    #+#             */
-/*   Updated: 2019/08/03 22:24:27 by ahugh            ###   ########.fr       */
+/*   Updated: 2019/08/04 16:01:54 by ahugh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@
 # define B5			0x009B95
 # define A6			0xFF2800
 # define B6			0x00BB3F
+# define NC			0x6A000000
 
 # define TL_FL		0xE6FFFF
 # define STEP		0x9932CC

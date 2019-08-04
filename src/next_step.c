@@ -6,7 +6,7 @@
 /*   By: ahugh <ahugh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/02 11:57:04 by ahugh             #+#    #+#             */
-/*   Updated: 2019/08/03 22:50:32 by ahugh            ###   ########.fr       */
+/*   Updated: 2019/08/04 15:49:07 by ahugh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,9 @@ int					next_step(t_viz *viz)
 		field = get_new_map(viz->game);
 		if (field == NULL)
 			return (false);
-		viz->maps->next = ft_dlstnew(field, viz->game->step);
-		del_any_matrix((void **)field, 2);
+		viz->maps->next = ft_dlstnew(0, 0);
+		viz->maps->next->con = field;
+		viz->maps->next->con_sz = viz->game->step;
 		if (viz->maps->next == NULL)
 			return (false);
 	}

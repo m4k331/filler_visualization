@@ -6,7 +6,7 @@
 /*   By: ahugh <ahugh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/01 15:17:23 by ahugh             #+#    #+#             */
-/*   Updated: 2019/08/03 23:09:19 by ahugh            ###   ########.fr       */
+/*   Updated: 2019/08/04 13:49:40 by ahugh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 # define W_MAP 1300
 # define H_MAP 1000
 
-# define X 550
-# define Y 150
+# define SMX 550
+# define SMY 150
 
 typedef struct		s_game
 {
