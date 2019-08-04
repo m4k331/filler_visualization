@@ -6,7 +6,7 @@
 /*   By: ahugh <ahugh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/01 15:17:23 by ahugh             #+#    #+#             */
-/*   Updated: 2019/08/04 17:56:44 by ahugh            ###   ########.fr       */
+/*   Updated: 2019/08/04 20:37:17 by ahugh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define VISUALIZATION_H
 # include "draw.h"
 # include <stdbool.h>
+# include <fcntl.h>
+# include <time.h>
 
 # define PLATEAU "Plateau"
 # define END "=="
@@ -72,6 +74,5 @@ int					next_step(t_viz *viz);
 int					prev_step(t_viz *viz);
 int					red_button(void **viz);
 void				shift_color(t_viz *viz);
-void				play(t_viz *viz);
 
 #endif

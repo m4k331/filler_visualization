@@ -6,7 +6,7 @@
 /*   By: ahugh <ahugh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/02 19:44:34 by ahugh             #+#    #+#             */
-/*   Updated: 2019/08/04 17:50:06 by ahugh            ###   ########.fr       */
+/*   Updated: 2019/08/04 18:06:50 by ahugh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,9 @@ static int			print_info_map(t_viz *viz)
 static void			print_keys(t_viz *viz)
 {
 	mlx_string_put(viz->mlx, viz->win->win, 100, 700, KEYS, "___KEYS___");
-	mlx_string_put(viz->mlx, viz->win->win, 100, 750, KEYS, "PLAY: ENTER");
-	mlx_string_put(viz->mlx, viz->win->win, 100, 800, KEYS, "NEXT: ->");
-	mlx_string_put(viz->mlx, viz->win->win, 100, 850, KEYS, "PREV: <-");
-	mlx_string_put(viz->mlx, viz->win->win, 100, 900, KEYS, "COLOR: SPACE");
+	mlx_string_put(viz->mlx, viz->win->win, 100, 750, KEYS, "NEXT: ->");
+	mlx_string_put(viz->mlx, viz->win->win, 100, 800, KEYS, "PREV: <-");
+	mlx_string_put(viz->mlx, viz->win->win, 100, 850, KEYS, "COLOR: SPACE");
 }
 
 static int			print_step(t_viz *viz)
