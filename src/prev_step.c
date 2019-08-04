@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   del_viz.c                                          :+:      :+:    :+:   */
+/*   prev_step.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahugh <ahugh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/04 17:06:26 by ahugh             #+#    #+#             */
-/*   Updated: 2019/08/04 19:42:58 by ahugh            ###   ########.fr       */
+/*   Created: 2019/08/04 18:13:27 by ahugh             #+#    #+#             */
+/*   Updated: 2019/08/04 18:22:10 by ahugh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/visualization.h"
 
-static void			del_map(void *map, size_t sz)
+int					prev_step(t_viz *viz)
 {
-	sz = 0;
-	del_any_matrix((void **)map, 2);
-}
-
-void				del_viz(t_viz **viz)
-{
-	t_dlist			*maps;
-
-	maps = ft_dlsthead((*viz)->maps);
-	ft_dlstdel(&maps, del_map);
-	(*viz)->maps = maps;
-	del_game(&(*viz)->game);
-	del_img((*viz)->img);
-	del_win((*viz)->win);
-	ft_memdel((void **)viz);
+	if (viz->game->step - 1 == -1)
+		return (false);
+	viz->game->step--;
+	viz->maps = viz->maps->prev;
+	upd_weight_players(viz->game, (int **)viz->maps->con);
+	visualization(viz);
+	return (true);
 }

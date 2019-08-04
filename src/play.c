@@ -6,7 +6,7 @@
 /*   By: ahugh <ahugh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/04 17:35:32 by ahugh             #+#    #+#             */
-/*   Updated: 2019/08/04 17:56:44 by ahugh            ###   ########.fr       */
+/*   Updated: 2019/08/04 17:59:06 by ahugh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,5 @@
 
 void				play(t_viz *viz)
 {
-	while (1)
-		if (next_step(viz) == false)
-			break ;
+	next_step(viz);
 }

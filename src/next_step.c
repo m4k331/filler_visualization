@@ -6,7 +6,7 @@
 /*   By: ahugh <ahugh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/02 11:57:04 by ahugh             #+#    #+#             */
-/*   Updated: 2019/08/04 15:49:07 by ahugh            ###   ########.fr       */
+/*   Updated: 2019/08/04 18:23:04 by ahugh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ int					next_step(t_viz *viz)
 {
 	int				**field;
 
-	viz->game->step++;
 	if (viz->maps->next == NULL)
 	{
 		if (skip_no_map_lines() == false)
@@ -50,12 +49,13 @@ int					next_step(t_viz *viz)
 		field = get_new_map(viz->game);
 		if (field == NULL)
 			return (false);
-		viz->maps->next = ft_dlstnew(0, 0);
+		ft_dlstaddlast(&(viz->maps), ft_dlstnew(0, 0));
 		viz->maps->next->con = field;
 		viz->maps->next->con_sz = viz->game->step;
 		if (viz->maps->next == NULL)
 			return (false);
 	}
+	viz->game->step++;
 	viz->maps = viz->maps->next;
 	upd_weight_players(viz->game, (int **)viz->maps->con);
 	visualization(viz);

@@ -6,7 +6,7 @@
 /*   By: ahugh <ahugh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/04 16:28:05 by ahugh             #+#    #+#             */
-/*   Updated: 2019/08/04 17:45:34 by ahugh            ###   ########.fr       */
+/*   Updated: 2019/08/04 18:25:37 by ahugh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,14 @@
 
 static int		press_key(int key, void **viz)
 {
-	if (key == 36)
-		play((t_viz *)(*viz));
+	if (key == 2 || key == 13 || key == 40 || key == 124 || key == 126)
+		next_step((t_viz *)(*viz));
+	else if (key == 0 || key == 1 || key == 38 || key == 123 || key == 125)
+		prev_step((t_viz *)(*viz));
 	else if (key == 49)
 		shift_color((t_viz *)(*viz));
+	else if (key == 53)
+		red_button(viz);
 	return (1);
 }
 

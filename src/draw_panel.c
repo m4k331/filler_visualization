@@ -6,7 +6,7 @@
 /*   By: ahugh <ahugh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/02 19:44:34 by ahugh             #+#    #+#             */
-/*   Updated: 2019/08/03 22:28:25 by ahugh            ###   ########.fr       */
+/*   Updated: 2019/08/04 17:50:06 by ahugh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,14 +71,12 @@ static int			print_players(t_viz *viz)
 	if (player == NULL)
 		return (false);
 	color = get_color_player(1, viz->game->color);
-	printf("%#x\n", color);
 	mlx_string_put(viz->mlx, viz->win->win, 800, 100, color, player);
 	ft_memdel((void **)&player);
 	player = get_str_player_wgt(viz->game->p2, viz->game->wgt_p2);
 	if (player == NULL)
 		return (false);
 	color = get_color_player(2, viz->game->color);
-	printf("%#x\n", color);
 	mlx_string_put(viz->mlx, viz->win->win, 1450, 100, color, player);
 	ft_memdel((void **)&player);
 	return (true);

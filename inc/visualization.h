@@ -6,7 +6,7 @@
 /*   By: ahugh <ahugh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/01 15:17:23 by ahugh             #+#    #+#             */
-/*   Updated: 2019/08/04 17:43:37 by ahugh            ###   ########.fr       */
+/*   Updated: 2019/08/04 17:56:44 by ahugh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,15 +63,15 @@ char				*get_str_player(int num, char *player);
 char				*get_str_player_wgt(char *player, int wgt);
 int					get_color_player(int num, int color);
 
-int					next_step(t_viz *viz);
-
 int					draw_panel(t_viz *viz);
 void				draw_map(t_viz *viz);
 
 int					run_visualization(void);
+
+int					next_step(t_viz *viz);
+int					prev_step(t_viz *viz);
+int					red_button(void **viz);
 void				shift_color(t_viz *viz);
 void				play(t_viz *viz);
-
-int					red_button(void **viz);
 
 #endif

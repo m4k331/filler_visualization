@@ -6,7 +6,7 @@
 #    By: ahugh <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/23 18:51:35 by ahugh             #+#    #+#              #
-#    Updated: 2019/08/04 17:39:24 by ahugh            ###   ########.fr        #
+#    Updated: 2019/08/04 17:43:37 by ahugh            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,6 +76,7 @@ FILES			=	bottom.c \
 					del_viz.c \
 					play.c \
 					shift_color.c \
+					prev_step.c \
 					main.c
 
 # flags && compile
