@@ -71,6 +71,7 @@ FILES			=	bottom.c \
 					get_str_player_wgt.c \
 					get_color_player.c \
 					draw_map.c \
+					run_visualization.c \
 					main.c
 
 # flags && compile

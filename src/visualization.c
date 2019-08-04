@@ -17,5 +17,4 @@ void				visualization(t_viz *viz)
 	if (draw_panel(viz) == false)
 		return ;
 	draw_map(viz);
-	mlx_loop(viz->mlx);
 }

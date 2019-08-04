@@ -6,7 +6,7 @@
 /*   By: ahugh <ahugh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/01 15:17:23 by ahugh             #+#    #+#             */
-/*   Updated: 2019/08/04 13:49:40 by ahugh            ###   ########.fr       */
+/*   Updated: 2019/08/04 16:34:21 by ahugh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,7 @@ int					next_step(t_viz *viz);
 
 int					draw_panel(t_viz *viz);
 void				draw_map(t_viz *viz);
+
+int					run_visualization(void);
 
 #endif
